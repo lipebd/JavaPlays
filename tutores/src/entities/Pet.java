@@ -41,7 +41,7 @@ public class Pet {
 	
 	public String toString() {
 		return petName
-				+ ", um " + tipo
+				+ ", um " + tipo.toString()
 				+ " de ID " + idPet;
 	}
 }

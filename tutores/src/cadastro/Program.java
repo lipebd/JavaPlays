@@ -16,14 +16,13 @@ public class Program {
 
 		List<Person> list = new ArrayList<>();
 
-		System.out.println("CADASTRO DE TUTORES");
-		System.out.println();
-
+		System.out.println("CADASTRO DE PETS E TUTORES");
+		pulaLinha(2);
 		System.out.print("Quantos tutores serão cadastrados? ");
 		int x = sc.nextInt();
 
 		for (int i = 0; i < x; i++) {
-
+			pulaLinha(1);
 			System.out.println("TUTOR #" + (i + 1) + "/" + x);
 			System.out.print("Nome completo do tutor: ");
 			sc.nextLine();
@@ -38,7 +37,7 @@ public class Program {
 
 			Pet pet = new Pet();
 
-			while (tipo != 1 && tipo != 2 && tipo != 3) {
+			while (tipo < 1 || tipo > 3) {
 				tipo = sc.nextInt();
 				if (tipo == 1) {
 					pet.setTipo(TipoPet.BIRD);
@@ -46,11 +45,14 @@ public class Program {
 					pet.setTipo(TipoPet.DOG);
 				} else if (tipo == 3) {
 					pet.setTipo(TipoPet.CAT);
-				} else {System.out.println("Insira um tipo válido");
+				} else {
+					pulaLinha(1);
+					System.out.println("Insira um tipo válido!");
 					System.out.print("[1] Pássaro, [2] Cachorro, [3] Gato: ");
 				}
 			}
-			System.out.println();
+			pulaLinha(1);
+			System.out.println("Cadastrando novo " + pet.getTipo());
 			System.out.print("Nome do pet: ");
 			String petName = sc.next();
 			System.out.print("ID do pet: ");
@@ -60,9 +62,9 @@ public class Program {
 			pet.setIdPet(idPet);
 			Person fulano = new Person(tutor, idade, pet);
 			list.add(fulano);
-			System.out.println();
 		}
 
+		pulaLinha(1);
 		System.out.println("Registro Final:");
 		for (Person fulano : list) {
 			System.out.println(fulano);
@@ -70,5 +72,10 @@ public class Program {
 
 		sc.close();
 	}
+	private static void pulaLinha(int n) {
+		for (int i = 0; i < n; i++)
+		System.out.println();
+		}
+	}
 
-}
+
