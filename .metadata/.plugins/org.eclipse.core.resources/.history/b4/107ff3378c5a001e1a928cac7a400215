@@ -1,0 +1,36 @@
+package entities;
+
+import enums.TipoPet;
+
+public class Pet {
+
+	public TipoPet tipo;
+	public String petName;
+	
+	public Pet() {
+	}
+	
+	public Pet(TipoPet tipo, String petName) {
+		this.tipo = tipo;
+		this.petName = petName;
+	}
+	
+	public TipoPet getTipo() {
+		return tipo;
+	}
+	
+	public void setTipo(TipoPet tipo) {
+		this.tipo = tipo;
+	}
+	
+	public String getPetName() {
+		return petName;
+	}
+	
+	public void setPetName(String petName) {
+		this.petName = petName;
+	}
+
+	
+	
+}

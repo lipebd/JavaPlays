@@ -1,0 +1,9 @@
+package entities;
+
+public class Pet {
+
+	public TipoPet tipo;
+	public String petName;
+	
+	
+}

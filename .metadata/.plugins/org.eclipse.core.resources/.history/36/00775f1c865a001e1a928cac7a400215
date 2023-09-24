@@ -1,0 +1,9 @@
+package entities;
+
+public enum TipoPet {
+	
+	DOG,
+	CAT,
+	BIRD;	
+
+}

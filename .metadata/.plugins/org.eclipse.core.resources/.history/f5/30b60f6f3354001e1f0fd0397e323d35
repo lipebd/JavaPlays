@@ -1,0 +1,19 @@
+package entities;
+
+public class Calculator {
+	
+	public double dolar;
+	public double quantidade;
+	public double iof;
+	
+	public static double convDolarReal(double dolar, double quantidade, double iof) {
+		double noTax = dolar * quantidade;
+		return noTax += noTax * iof / 100;
+	}
+	
+	public String toString() {
+		return "Total a ser pago: R$ "
+			+ String.format("%.2f", convDolarReal(dolar, quantidade, iof));
+	}
+	
+}

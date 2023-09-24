@@ -1,0 +1,32 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Programa {
+
+	public static void main(String[] args) {
+	Locale.setDefault(Locale.US);
+	
+	Scanner sc = new Scanner(System.in);
+	
+	System.out.println("Conversão Dólar -> Real com IOF%");
+	System.out.println();
+	
+	System.out.print("Cotação atual: ");
+	double dolar = sc.nextDouble();
+	System.out.print("Dólares comprados: ");
+	double quantidade = sc.nextDouble();
+	System.out.print("Valor atual do IOF%: ");
+	double iof = sc.nextDouble();
+	
+	double real = dolar * quantidade;
+	double total = real += real * iof/100;
+	
+	System.out.printf("Total a ser pago em : R$ %.2f", total);
+	
+	sc.close();
+
+	}
+
+}
