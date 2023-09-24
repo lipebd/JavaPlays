@@ -1,14 +1,19 @@
 package entities;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Person {
 
-	public String name;
-	public Integer age;
+	private String name;
+	private Integer age;
+	private LocalDate nascimento;
 	Pet pet;
+	LocalDate hoje = LocalDate.now();
 	
-	public Person(String name, Integer age, Pet pet) {
+	public Person(String name, String nascim, Pet pet) {
 		this.name = name;
-		this.age = age;
+		this.nascimento =  LocalDate.parse(nascim);
 		this.pet = pet;
 	}
 
@@ -24,8 +29,8 @@ public class Person {
 		return age;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public LocalDate getNascimento() {
+		return nascimento;
 	}
 
 	public Pet getPet() {
@@ -35,10 +40,17 @@ public class Person {
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
+	
+	private void setAge() {
+		age = Period.between(nascimento, hoje).getYears(); 
+	}
+	
 	public String toString() {
+		setAge();
 		return name
 				+ ", "
 				+ age + " anos de idade, tutor do "
-				+ pet.toString();
+				+ pet.toString()
+				+".";
 	}
 }
