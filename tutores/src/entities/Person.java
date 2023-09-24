@@ -2,6 +2,7 @@ package entities;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class Person {
 
@@ -10,10 +11,11 @@ public class Person {
 	private LocalDate nascimento;
 	Pet pet;
 	LocalDate hoje = LocalDate.now();
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
 	
 	public Person(String name, String nascim, Pet pet) {
 		this.name = name;
-		this.nascimento =  LocalDate.parse(nascim);
+		this.nascimento =  LocalDate.parse(nascim, dtf);
 		this.pet = pet;
 	}
 

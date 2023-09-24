@@ -2,6 +2,7 @@ package enums;
 
 public enum TipoPet {
 	
+	TIPO,
 	DOG,
 	CAT,
 	BIRD;	

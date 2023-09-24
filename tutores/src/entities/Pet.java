@@ -11,8 +11,10 @@ public class Pet {
 	public Pet() {
 	}
 	
-	public Pet(TipoPet tipo) {
+	public Pet(TipoPet tipo, String petName, int idPet) {
 		this.tipo = tipo;
+		this.petName = petName;
+		this.idPet = idPet;
 	}
 	
 	public TipoPet getTipo() {
