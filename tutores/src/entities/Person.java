@@ -35,5 +35,10 @@ public class Person {
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
-	
+	public String toString() {
+		return name
+				+ ", "
+				+ age + " anos de idade, tutor do "
+				+ pet.toString();
+	}
 }

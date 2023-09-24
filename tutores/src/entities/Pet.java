@@ -39,4 +39,9 @@ public class Pet {
 		this.idPet = idPet;
 	}
 	
+	public String toString() {
+		return petName
+				+ ", um " + tipo
+				+ " de ID " + idPet;
+	}
 }

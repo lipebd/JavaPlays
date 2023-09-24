@@ -5,5 +5,4 @@ public enum TipoPet {
 	DOG,
 	CAT,
 	BIRD;	
-
 }
