@@ -1,0 +1,30 @@
+----------------------
+Nome: Ana Maria Braga
+Data de nascimento: 1949-04-01
+DADOS DO PET
+ID: 101
+Tipo do animal: pássaro
+Nome: Louro José
+Data do registro: 2023-09-25T03:44:04.717233400
+----------------------
+
+----------------------
+Nome: Fausto Silva
+Data de nascimento: 1950-05-02
+DADOS DO PET
+ID: 102
+Tipo do animal: cachorro
+Nome: Rote Vailer
+Data do registro: 2023-09-25T03:44:20.709916100
+----------------------
+
+----------------------
+Nome: Felipe
+Data de nascimento: 1994-08-16
+DADOS DO PET
+ID: 123
+Tipo do animal: pássaro
+Nome: juan
+Data do registro: 2023-09-25T04:13:05.917699400
+----------------------
+

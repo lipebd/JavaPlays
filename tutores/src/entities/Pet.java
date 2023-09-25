@@ -1,6 +1,8 @@
 package entities;
 
-import enums.TipoPet;
+import java.util.Scanner;
+
+import entities.enums.TipoPet;
 
 public class Pet {
 
@@ -46,4 +48,5 @@ public class Pet {
 				+ ", um " + tipo.toString()
 				+ " de ID " + idPet;
 	}
+	
 }

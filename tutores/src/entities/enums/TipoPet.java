@@ -1,12 +1,9 @@
-package enums;
+package entities.enums;
 
 public enum TipoPet {
-	
-	TIPO,
-	DOG,
-	CAT,
-	BIRD;	
-	
+
+	TIPO, DOG, CAT, BIRD;
+
 	public String toString() {
 		switch (this) {
 		case DOG:
