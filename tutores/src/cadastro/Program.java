@@ -15,7 +15,6 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		List<Person> tutores = new ArrayList<>();
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
 		
 		System.out.println("CADASTRO DE PETS E TUTORES");
 		pulaLinha(1);
