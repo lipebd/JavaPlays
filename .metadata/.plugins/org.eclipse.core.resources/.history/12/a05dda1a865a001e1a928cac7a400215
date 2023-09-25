@@ -1,9 +1,0 @@
-package entities;
-
-public class Pet {
-
-	TipoPet String;
-	public String petName;
-	
-	
-}
