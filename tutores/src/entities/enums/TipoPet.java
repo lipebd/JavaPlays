@@ -2,7 +2,7 @@ package entities.enums;
 
 public enum TipoPet {
 
-	TIPO, DOG, CAT, BIRD;
+	DOG, CAT, BIRD, SHEEP;
 
 	public String toString() {
 		switch (this) {
@@ -12,8 +12,15 @@ public enum TipoPet {
 			return "gato";
 		case BIRD:
 			return "pássaro";
+		case SHEEP:
+			return "carneiro";
 		default:
 			return null;
 		}
+	}
+
+	TipoPet parseTipoPet(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

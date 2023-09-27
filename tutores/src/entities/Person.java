@@ -8,7 +8,6 @@ import java.time.format.DateTimeFormatter;
 public class Person {
 
 	private String name;
-	private Integer age;
 	private LocalDate nascimento;
 	private LocalDateTime agora;
 	Pet pet;
@@ -22,6 +21,12 @@ public class Person {
 		this.agora = agora;
 	}
 
+	public Person(String name, String nascim, LocalDateTime agora) {
+		this.name = name;
+		this.nascimento = LocalDate.parse(nascim, dtf);
+		this.agora = agora;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -31,11 +36,7 @@ public class Person {
 	}
 
 	public Integer getAge() {
-		return age;
-	}
-
-	public LocalDate getNascimento() {
-		return nascimento;
+		return Period.between(nascimento, hoje).getYears();
 	}
 
 	public Pet getPet() {
@@ -46,38 +47,24 @@ public class Person {
 		this.pet = pet;
 	}
 
-	private void setAge() {
-		age = Period.between(nascimento, hoje).getYears();
-	}
-
 	public String fim() {
-		setAge();
+		String pronome;
+		if (pet.getGender() == 'm') {
+			pronome = "do";
+		} else {
+			pronome = "da";
+		}
 		return String.format("%nCadastro realizado com sucesso.")
-		+ String.format("%n-----------------------------------------%n")
-		+ name
-		+ ", "
-		+ age
-		+ " anos de idade, tutor(a) do "
-		+ pet.toString()
-		+ "."
-		+ String.format("%n-----------------------------------------");
+				+ String.format("%n-----------------------------------------%n") + name + ", " + getAge()
+				+ " anos de idade, tutor " + pronome + " " + pet.toString() + "."
+				+ String.format("%n-----------------------------------------");
 	}
 
 	public String toString() {
-		setAge();
-		return "----------------------"
-				+ String.format("%nNome: ")
-				+ name
-				+ String.format("%nData de nascimento: ")
-				+ nascimento + String.format("%nDADOS DO PET")
-				+ String.format("%nID: ")
-				+ pet.getIdPet()
-				+ String.format("%nTipo do animal: ")
-				+ pet.getTipo()
-				+ String.format("%nNome: ")
-				+ pet.getPetName()
-				+ String.format("%nData do registro: ")
-				+ agora
+		return "----------------------" + String.format("%nNome: ") + name + String.format("%nData de nascimento: ")
+				+ nascimento + " (" + getAge() + " anos)" + String.format("%nDADOS DO PET") + String.format("%nID: ")
+				+ pet.getIdPet() + String.format("%nTipo do animal: ") + pet.getTipo() + " (" + pet.getGender() + ") "+ String.format("%nNome: ")
+				+ pet.getPetName() + String.format("%nData do registro: ") + agora
 				+ String.format("%n----------------------%n");
 	}
 }
